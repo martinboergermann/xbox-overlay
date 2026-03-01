@@ -9,7 +9,7 @@
   <div id="controller"></div>
 
   <script>
-    fetch('layout.json')
+    fetch('layout.json.txt')
       .then(res => res.json())
       .then(data => {
         let container = document.getElementById("controller");
