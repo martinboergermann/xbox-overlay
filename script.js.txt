@@ -1,0 +1,38 @@
+let buttonsMap = {
+  a: 0,
+  b: 1,
+  x: 2,
+  y: 3,
+  lb: 4,
+  rb: 5,
+  lt: 6,
+  rt: 7,
+  view: 8,
+  menu: 9,
+  ls: 10,
+  rs: 11,
+  dpad_up: 12,
+  dpad_down: 13,
+  dpad_left: 14,
+  dpad_right: 15,
+  xbox: 16
+};
+
+function update() {
+  let gamepad = navigator.getGamepads()[0];
+  if (gamepad) {
+    for (let key in buttonsMap) {
+      let element = document.getElementById(key);
+      if (!element) continue;
+
+      if (gamepad.buttons[buttonsMap[key]].pressed) {
+        element.classList.add("pressed");
+      } else {
+        element.classList.remove("pressed");
+      }
+    }
+  }
+  requestAnimationFrame(update);
+}
+
+window.addEventListener("gamepadconnected", update);

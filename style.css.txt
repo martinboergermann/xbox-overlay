@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+#controller {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background: url('https://i.imgur.com/3QK6F5M.png') no-repeat center;
+  background-size: contain;
+}
+
+.button {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.1s ease;
+}
+
+.button.pressed {
+  background: rgba(0,255,0,0.6);
+  box-shadow: 0 0 20px #00ff00;
+  transform: scale(1.2);
+}

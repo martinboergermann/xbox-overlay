@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Xbox Overlay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="controller"></div>
+
+  <script>
+    fetch('layout.json')
+      .then(res => res.json())
+      .then(data => {
+        let container = document.getElementById("controller");
+        data.buttons.forEach(btn => {
+          let div = document.createElement("div");
+          div.classList.add("button");
+          div.id = btn.id;
+          div.style.left = btn.x + "px";
+          div.style.top = btn.y + "px";
+          container.appendChild(div);
+        });
+      });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
